@@ -1,6 +1,6 @@
 **An exercise in IPC (interprocess communication) with D-Bus using C, Python, Java and PHP.**
 
-[**Walk through it step-by-step in Google Colab**](https://colab.research.google.com/drive/18zxaGt_iW2wkaimTAUD3fJq94TEAtCjA)[^1]
+[**Walk through it step-by-step in Google Colab**](https://colab.research.google.com/github/nsndp/dbus-example/blob/main/demo.ipynb)[^1]
 [^1]: Because why use Colab only for machine learning
 when you can use it as a free interactive cloud-hosted Linux environment too.
 
