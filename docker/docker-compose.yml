@@ -1,0 +1,56 @@
+version: '3'
+services:
+
+  dbus-c-dev:
+    container_name: DBUS_C_DEV
+    build:
+      context: ../
+      dockerfile: docker/dev.dbus.c.dockerfile
+    security_opt:
+      # for "make" to work in alpine under older docker versions:
+      # https://wiki.alpinelinux.org/wiki/Release_Notes_for_Alpine_3.14.0#faccessat2
+      - seccomp=seccomp_profile.json
+    tty: true
+  
+  dbus-java-dev:
+    container_name: DBUS_JAVA_DEV
+    build:
+      context: ../
+      dockerfile: docker/dev.dbus.java.dockerfile
+    tty: true
+  
+  dbus-c:
+    container_name: DBUS_C
+    build:
+      context: ../
+      dockerfile: docker/dbus.c.dockerfile
+    environment:
+      - DOCKER_SERVICE_NAME=dbus-c
+    tty: true
+      
+  dbus-py:
+    container_name: DBUS_PY
+    build:
+      context: ../
+      dockerfile: docker/dbus.py.dockerfile
+    environment:
+      - DOCKER_SERVICE_NAME=dbus-py
+    tty: true
+    
+  dbus-java:
+    container_name: DBUS_JAVA
+    build:
+      context: ../
+      dockerfile: docker/dbus.java.dockerfile
+    environment:
+      - DOCKER_SERVICE_NAME=dbus-java
+    tty: true
+    
+  dbus-php:
+    container_name: DBUS_PHP
+    build:
+      context: ../
+      dockerfile: docker/dbus.php.dockerfile
+    environment:
+      - DOCKER_SERVICE_NAME=dbus-php
+    tty: true
