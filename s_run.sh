@@ -15,7 +15,6 @@ if [[ -z $1 ]] || [[ $1 = "c" ]]; then (./gserver $3 &);
 elif [[ $1 = "py" ]]; then (python3 dasbus_server.py $3 &);
 elif [[ $1 = "php" ]]; then (php -d extension=dbus.so -f pecldbus_server.php -- $3 &);
 elif [[ $1 = "java" ]]; then
-    #export PATH="<some folder>/apache-maven-3.9.1/bin:$PATH" - for manually installed maven
     java -cp java-server.jar com.exmpl.server.Server $3 &
     sleep 4 # for some reason dbus-java needs a lot of time for inits, so extra delay here
 fi
